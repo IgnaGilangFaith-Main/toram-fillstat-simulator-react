@@ -58,8 +58,14 @@ function App() {
   }, []);
 
   const startSimulation = useCallback(() => {
-    if (!settings.startingPot || settings.startingPot < 1) {
-      alert("❌ Silakan masukkan POT awal yang valid!");
+    if (
+      settings.startingPot === "" ||
+      !settings.startingPot ||
+      settings.startingPot < 1
+    ) {
+      alert(
+        "❌ Silakan masukkan POT awal terlebih dahulu!\n\nContoh: 99, 150, 200, dll."
+      );
       return;
     }
 

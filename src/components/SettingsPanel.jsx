@@ -26,12 +26,15 @@ const SettingsPanel = memo(
             <input
               type="number"
               id="startingPot"
-              placeholder="Contoh: 99"
+              placeholder="Masukkan POT awal (contoh: 99)"
               min="1"
               max="999"
               value={settings.startingPot}
               onChange={(e) =>
-                handleInputChange("startingPot", parseInt(e.target.value) || "")
+                handleInputChange(
+                  "startingPot",
+                  e.target.value === "" ? "" : parseInt(e.target.value) || ""
+                )
               }
             />
           </div>
